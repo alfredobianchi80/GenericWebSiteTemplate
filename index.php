@@ -32,10 +32,7 @@ if ($DB_CONFIG['USE_DB']==true){
     $DB= new cls_DataBase;
     $DB->Setta_InfoConnessione($DB_Connection_Information);
     if (!$DB->Connetti()){
-        //die('Erroe connesione database.<br><br>' .  $DB->Last_Error);
-        //$Pagina->Variables->ItemAdd("{%BODY%}",'Erroe connesione database.<br><br>' .  $DB->Last_Error);
-
-        echo 'Erroe connesione database.<br><br>' .  $DB->Last_Error;
+        echo _DB_CONNECTION_ERROR ."<br><br>" .  $DB->Last_Error;
     }else{
         echo "<!-- DBCONN:OK -->\n";
     }

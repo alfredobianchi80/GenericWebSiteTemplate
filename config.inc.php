@@ -24,4 +24,6 @@
     $MENU_CONFIG['']='';
 
 
+include_once "./language/it/labels_it.php";
+
 ?>
