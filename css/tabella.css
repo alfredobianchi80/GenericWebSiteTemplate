@@ -1,0 +1,51 @@
+table.Table_Result{
+    border: 1px solid black;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+/*
+.Table_Result thead {}
+*/
+
+table.Table_Result thead tr {
+    border: 1px solid black;
+    text-align:  center;
+    vertical-align: middle;
+    background-color: #cccccc;
+    height: 30px;
+    font-weight: bold;
+  }
+  
+  table.Table_Result thead tr td {
+    border: 1px solid black;
+    height: 25px;
+    padding-right: 5px;
+    padding-left: 5px;
+    vertical-align: middle;
+  }
+
+  /*
+  .Table_Result tbody {}
+  */
+
+table.Table_Result tbody tr {
+      background-color: #ccfff5;
+  }
+  
+table.Table_Result tbody tr:nth-child(even) {
+      background-color: #cce6ff;
+  }
+  
+table.Table_Result tbody tr td {
+    border: 1px solid black;
+    height: 25px;
+    padding-right: 5px;
+    padding-left: 5px;
+    vertical-align: middle;
+  }
+  
+  /*
+  .Table_Result tfoot {}
+  */

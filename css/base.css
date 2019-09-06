@@ -1,0 +1,177 @@
+/* *************************
+ * *** VARIABLE
+ * ************************* */
+
+:root {
+  --Responsive_Width:800px;
+
+  --Header_Height_Normal: 54px;
+  --Header_Height_Responsive: 40px;
+  --Header_Border_Color: black;
+  --Header_Border_style:solid;
+  --Header_Background_color:transparent;
+
+  --header_caption_Width_Normal: 200px;
+  --header_caption_Border_Color:black;
+  --header_caption_Border_Style:transparent;
+  
+  
+  --header_menu_Left_Normal: 200px;
+  --header_menu_Height_Normal: 50px;
+  --header_menu_Border_Color:#875;
+  --header_menu_Border_Style:transparentq;
+
+
+  --Body_Top_Normal: 62px;
+  --Body_Top_Responsive: 62px;
+  --Body_Bottom: 30px;
+  --Body_Border_Color:blue;
+  --Body_Border_style:solid;
+  --Body_Background_color:transparent;
+
+
+  --Footer_Height: 20px;
+  --Footer_Border_Color:black;
+  --Footer_Border_style:hidden;
+  --Footer_Background_color: #ccffcc;
+}
+
+
+/* *************************
+ * *** BASE STRUCTURE DIV
+ * ************************* */
+
+ div.header {
+    /* Bloccato ad Inizio Pagina visualizzata*/
+    border: 1px var(--Header_Border_style,solid) var(--Header_Border_Color,black);
+    background-color: var(--Header_Background_color);
+    position: fixed;
+    height: var(--Header_Height_Normal,54);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: auto;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    z-index: 100;
+    
+  }
+  
+  div.body {
+    border: 1px var(--Body_Border_style) var(--Body_Border_Color);
+    background-color: var(--Body_Background_color);
+    position: fixed;
+    overflow: auto;
+    height: auto;
+    top: var(--Body_Top_Normal);
+    right: 0;
+    left: 0;
+    bottom: var(--Body_Bottom);
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    z-index: 50;
+  }
+  
+  div.footer {
+    /* Bloccato a fine Pagina visualizzata*/
+    border: 1px var(--Footer_Border_style) var(--Footer_Border_Color);
+    background-color: var(--Footer_Background_color);
+    position: fixed;
+    height: var(--Footer_Height);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 40px;
+    padding-top: 5px;
+    z-index: 50;
+  }
+  
+  /* *************************
+   * *** SUB-STRUCTURE DIV
+   * ************************* */
+  
+  div.header_caption {
+    border: 1px var(--header_caption_Border_style) var(--header_caption_Border_Color);
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    width: var(--header_caption_Width_Normal);
+    /*z-index: 100;*/
+  }
+  
+  div.header_menu {
+    border: 1px var(--header_menu_Border_style) var(--header_menu_Border_Color);
+    position: relative;
+    left: var(--header_menu_Left_Normal);
+    top:0px;
+    height:var(--header_menu_Height_Normal);
+    padding: 0px 0px;
+    margin: 0px 0px;
+    /*z-index: 100;*/
+  }
+  
+  /* *************************
+   * *** RESPONSIVE ELEMENTS
+   * ************************* */
+
+ 
+  @media screen and (max-width :var(--Responsive_Width)) {
+    div.header {
+      height: var(--Header_Height_Responsive);
+    }
+  
+    div.header_menu {
+      position: relative;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      padding: 0px 0px;
+      margin: 0px 0px;
+    }
+    div.body {
+      top: var(--Body_Top_Responsive);
+    }
+    
+  }
+ 
+
+
+/* **************************************
+   ***  IE 10+ Compatible
+   *** 
+   *** Necessario solo se si utilizzano
+   *** le variabili CSS...
+   ************************************** */
+
+
+  /*IE10+*/
+
+   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    div.header {
+      border: 1px solid black;
+      background-color: transparent;
+      height: 54px;
+    }
+    
+    div.body {
+      border: 1px solid black;
+      background-color: transparent;
+      top: 62px;
+      bottom: 30px;
+    }
+    
+    div.footer {
+      border: 1px hidden black;
+      background-color:#ccffcc;
+      height: 20px;
+    }
+
+   }
